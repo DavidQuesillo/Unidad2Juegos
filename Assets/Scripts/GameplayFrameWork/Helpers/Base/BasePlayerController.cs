@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
  
-public enum EDirections {NONE, UP,DOWN,LEFT,RIGHT}
+ 
 public enum EInputType { TAP,JOYSTICK,SCREEN_SIDES,ACCELEROMETER}
 
 public struct FTouchInfo 

@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - Item
   - Block
+  - Wall
   layers:
   - Default
   - TransparentFX
