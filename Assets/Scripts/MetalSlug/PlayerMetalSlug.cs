@@ -33,11 +33,12 @@ public class PlayerMetalSlug : MonoBehaviour
 
     void Shoot()
     {
-        if(currentItems.Contains(ItemTypes.Shoot))
-        {
-            print("Shoot player");
+       GameObject bullet=  PlayerBulletPool.Instance.GetPooledObject(transform.position);
 
-        }
+       
+        bullet.GetComponent<Projectilecomponent>().LaunchProjectile(transform.right);
+
+       
     }
     void Update()
     {

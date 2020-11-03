@@ -9,6 +9,7 @@ TagManager:
   - Item
   - Block
   - Wall
+  - PlayerBullet
   layers:
   - Default
   - TransparentFX
