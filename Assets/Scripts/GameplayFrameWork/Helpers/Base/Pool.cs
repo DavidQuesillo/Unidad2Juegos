@@ -1,13 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Sirenix.OdinInspector;
 
  
     public class Pool<T> : MonoBehaviour where T : MonoBehaviour
     {
 
     public static T Instance { get; private set; }
- 
+    [PreviewField, Required, AssetsOnly]
     public GameObject objectPrefab;
 
     public int poolSize = 10;
