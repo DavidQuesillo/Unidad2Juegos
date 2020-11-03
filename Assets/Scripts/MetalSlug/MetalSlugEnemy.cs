@@ -19,11 +19,13 @@ public class MetalSlugEnemy : MonoBehaviour
         if(targetPlayer != null)
         {
              print("shoot player");
-        }
-         
-          
-        
+        } 
 
+    }
+    public void GetDamage(float DamageAmmount)
+    {
+       
+        Destroy(gameObject);
     }
     // Update is called once per frame
     void Update()

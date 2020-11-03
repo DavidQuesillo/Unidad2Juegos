@@ -13,8 +13,12 @@ public class Projectilecomponent : SerializedMonoBehaviour
     Rigidbody2D rb;
 
     public float projectileSpeed = 2f;
-    public UnityEventOnTriggerEnter2D TriggerEnter2D;
-    public UnityEventOnCollisionEnter2D CollisionEnter2D;
+    public float projectileDamage = 1f;
+    public string targetTag;
+    public string targetMethod = "GetDamage";
+
+  //  public UnityEventOnTriggerEnter2D TriggerEnter2D;
+  //  public UnityEventOnCollisionEnter2D CollisionEnter2D;
 
     private void Awake()
     {
@@ -28,7 +32,7 @@ public class Projectilecomponent : SerializedMonoBehaviour
     public void LaunchProjectile(Vector2 LaunchDirection)
     {
 
-        SetVelocity(LaunchDirection * projectileSpeed);
+        GetComponent<Rigidbody2D>().velocity = LaunchDirection * projectileSpeed;
     }
     public void LaunchProjectile(float LaunchSpeed=2f)
     {
@@ -37,17 +41,31 @@ public class Projectilecomponent : SerializedMonoBehaviour
     }
     public void SetVelocity(Vector2 velocity)
     {
-        rb.velocity = velocity;
+        rb.velocity = velocity*projectileSpeed;
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        TriggerEnter2D?.Invoke(collision);
+      
+        if(collision.CompareTag(targetTag)==true)
+        {
+            ApplyDamageTotarget(collision.gameObject);
+        }
 
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        CollisionEnter2D?.Invoke(collision);
+        if (collision.gameObject.CompareTag(targetTag) == true)
+        {
+            ApplyDamageTotarget(collision.gameObject);
+        }
+    }
+
+    void ApplyDamageTotarget(GameObject targetGameObject)
+    {
+        targetGameObject.SendMessage(targetMethod, projectileDamage,SendMessageOptions.DontRequireReceiver);
+
+        gameObject.SetActive(false);
     }
 
 }
