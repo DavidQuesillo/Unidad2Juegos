@@ -34,6 +34,11 @@ public class Projectilecomponent : SerializedMonoBehaviour
 
         GetComponent<Rigidbody2D>().velocity = LaunchDirection * projectileSpeed;
     }
+    public void LaunchProjectile(Vector2 LaunchDirection, float LaunchSpeed = 2f)
+    {
+        projectileSpeed = LaunchSpeed;
+        GetComponent<Rigidbody2D>().velocity = LaunchDirection * projectileSpeed;
+    }
     public void LaunchProjectile(float LaunchSpeed=2f)
     {
         projectileSpeed = LaunchSpeed;
