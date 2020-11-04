@@ -267,7 +267,7 @@ MonoBehaviour:
   objectPrefab: {fileID: 2378410140637220901, guid: dc9afada9c09bd84f97fd5db708051c5,
     type: 3}
   poolSize: 10
-  hideFlag: 1
+  hideFlag: 0
 --- !u!4 &1670611902
 Transform:
   m_ObjectHideFlags: 0
@@ -298,6 +298,7 @@ GameObject:
   - component: {fileID: 2087134642}
   - component: {fileID: 2087134644}
   - component: {fileID: 2087134645}
+  - component: {fileID: 2087134646}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -470,6 +471,34 @@ MonoBehaviour:
       - m_Target: {fileID: 2087134644}
         m_MethodName: ShootBulletUp
         m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &2087134646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2087134637}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87bbc0117bd0f634392954d7ee426e21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseValue: 1
+  isDead: 0
+  OnDeadEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2087134637}
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
