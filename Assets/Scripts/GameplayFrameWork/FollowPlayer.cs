@@ -2,12 +2,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class FollowPlayer : MonoBehaviour
 {
     Transform playerTransform;
-    public float moveSpeed = 1; 
-
+    public float moveSpeed = 1;
+    public UnityEvent OnPathFinish;
     private void OnEnable()
     {
         if(playerTransform==null)
@@ -26,6 +27,6 @@ public class FollowPlayer : MonoBehaviour
 
     void PathFinish()
     {
-        
+        OnPathFinish.Invoke();
     }
 }
