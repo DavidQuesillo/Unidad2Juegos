@@ -97,6 +97,7 @@ GameObject:
   - component: {fileID: -3042992024091918067}
   - component: {fileID: 9071536093791126845}
   - component: {fileID: 7418518352003971763}
+  - component: {fileID: -6343925898604761194}
   m_Layer: 0
   m_Name: EnemyFighterFollowPlayer
   m_TagString: Enemy
@@ -184,6 +185,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: -6343925898604761194}
+        m_MethodName: AddScore
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2378410140637220895
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -230,6 +242,7 @@ MonoBehaviour:
   objectPrefab: {fileID: 2565408647675965477, guid: f8eed0903f87bba4d96a27ac3ffbf24d,
     type: 3}
   poolSize: 10
+  IsSingleton: 0
   hideFlag: 1
   projectileSpeed: 15
 --- !u!114 &7418518352003971763
@@ -262,3 +275,16 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &-6343925898604761194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2378410140637220901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7ef78dd225a9a64ea1651cafec80a97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseScore: 1
